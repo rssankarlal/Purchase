@@ -1,0 +1,50 @@
+
+<!-- <h1 mat-dialog-title>Add supplierForm </h1> -->
+
+
+<mat-toolbar>
+    <span>{{taxForm.controls['id'].value?"Modify Tax":"New Tax"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div style="margin-top: 20px;"></div>
+  <div mat-dialog-content class="example-container">
+      <form [formGroup]="taxForm">
+        <div>
+          
+            <mat-form-field>
+              <input formControlName="taxcode" matInput placeholder="Tax Code">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input formControlName="taxdesc" matInput placeholder="Tax Description">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+  
+  
+          </div>
+          <div>
+            <mat-form-field>
+                <input formControlName="taxper" type="number" matInput placeholder="Tax %">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input formControlName="cgst" type="number" matInput placeholder="CGST %">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input formControlName="sgst" type="number" matInput placeholder="SGST %">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+
+          </div>
+      </form>
+      
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button  style="margin-left: 8px;" mat-raised-button color="primary" (click)="addtax()">{{actionBtn}}</button>
+  </div>
+  

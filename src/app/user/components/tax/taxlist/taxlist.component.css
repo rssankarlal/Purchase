@@ -1,0 +1,72 @@
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  /* th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } */
+  .header-align-right {
+    text-align: center;
+    justify-content: flex-end;
+  }  
+
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+ 
+
+
+
+.w-50{
+  width: 50px;
+}
+.w-75{
+  width: 75px;
+}
+.w-100{
+    width: 100px;
+}
+.w-100{
+  width: 150px;
+}
+.w-200{
+  width: 200px;
+}
+.w-250{
+  width: 250px;
+}
+.w-300{
+  width: 300px;
+}
+.th-center{
+  text-align: center;
+}
+.th-left{
+  text-align: left;
+}
+.th-right{
+  text-align: right;
+  justify-content: flex-end;
+}
+
+
+
+ /* td, th {
+    width: 25%;
+  }*/
+  

@@ -1,0 +1,38 @@
+<mat-card style="background-color: #BCD2E8;">
+    <mat-card-title>Signup</mat-card-title>
+    <mat-card-title class="subtitle">Kindly Register Yourself!!</mat-card-title>
+    
+    <mat-card-content>
+        <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+             <p>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Full Name" formControlName="fullname">
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Mobile No" formControlName="mobile">
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Email address" type="email" formControlName="email">
+                </mat-form-field>
+              </p>
+
+              <p>
+                <mat-form-field>
+                  <input type="text" matInput placeholder="Password" type="password" formControlName="password">
+                </mat-form-field>
+              </p>
+
+              <div class="button">
+                <button type="submit" mat-button ><mat-icon aria-hidden="true">how_to_reg</mat-icon>Signup</button>
+              </div>
+
+              <a style="color: blue; margin-top:10px" routerLink="/auth/login">Already User? then Login !!</a>
+        </form>
+        
+    </mat-card-content>
+</mat-card>

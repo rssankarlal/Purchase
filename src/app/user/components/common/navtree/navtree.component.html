@@ -1,0 +1,50 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" style="background-color:#0d47a1;height: 100%;">
+    <!-- This is the tree node template for leaf nodes -->
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+    
+      <button mat-icon-button disabled >
+          
+      </button>
+      <!-- {{node.name}} -->
+      <li class="mat-tree-node">
+        <a   class="dropdown-item" routerLink= {{node.url}} routerLinkActive="active">
+         <span  style=" margin-right: 20px; font-size: 16px; color:white" > {{node.name}}</span>
+        </a>
+        </li>
+    </mat-tree-node>
+    <!-- This is the tree node template for expandable nodes -->
+    <mat-tree-node  *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+      
+     
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'toggle ' + node.name">
+
+               
+          <mat-icon class="mat-icon-rtl-mirror"  style=" background-color: white;">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+       
+        <span  style="margin-right: 50px; font-size: 16px; color:white" >{{node.name}}</span>
+      </mat-tree-node>
+  </mat-tree>
+
+
+  <!-- <div ui-tree>
+    <ol ui-tree-nodes="" ng-model="list">
+      <li ng-repeat="item in list" ui-tree-node>
+        <div ui-tree-handle>
+          {{item.title}}
+        </div>
+        <ol ui-tree-nodes="" ng-model="item.items">
+          <li ng-repeat="subItem in item.items" ui-tree-node>
+            <div ui-tree-handle>
+              {{subItem.title}}
+            </div>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div> -->
+  
+  

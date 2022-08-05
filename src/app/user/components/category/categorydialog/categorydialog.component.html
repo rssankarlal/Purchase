@@ -1,0 +1,29 @@
+
+<!-- <h1 mat-dialog-title>Add supplierForm </h1> -->
+
+
+<mat-toolbar>
+    <span>{{categoryForm.controls['id'].value?"Modify Category":"New Category"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div style="margin-top: 20px;"></div>
+  <div mat-dialog-content class="example-container">
+      <form [formGroup]="categoryForm">
+        <div>
+          
+            <mat-form-field>
+              <input formControlName="categorydesc" matInput placeholder="Category">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+  
+  
+          </div>
+      </form>
+      
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button  style="margin-left: 8px;" mat-raised-button color="primary" (click)="addCategory()">{{actionBtn}}</button>
+  </div>
+  

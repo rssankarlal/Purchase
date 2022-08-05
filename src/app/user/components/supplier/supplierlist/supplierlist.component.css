@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  /* th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } */
+  .header-align-right {
+    text-align: center;
+    justify-content: flex-end;
+  }  
+  
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  

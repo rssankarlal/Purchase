@@ -1,0 +1,154 @@
+<mat-toolbar>
+    <span>{{gRForm.controls['id'].value?"Modify Goods Receipt":"New Goods Receipt"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div style="margin-top: 20px;"></div>
+  <div>
+  
+    <div mat-dialog-content class="example-container">
+      <form [formGroup]="gRForm">
+  
+      
+  
+   <div>
+
+    <mat-form-field>
+        <mat-label>GR Id</mat-label>
+        <input matInput formControlName="id" type="number" placeholder="GR Id">
+        <mat-error>This field is mandatory.</mat-error>
+      </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>GR Date</mat-label>
+          <input matInput formControlName="grDate" placeholder="GR Date" value="31/02/2022" type="date">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field style="width: 300px;"> 
+            <mat-select formControlName="supplierId" placeholder="Supplier">
+              <mat-option>None</mat-option>
+              <ng-container *ngFor="let supp of supplierlist">
+                <mat-option value="{{supp.id}}" (onSelectionChange)="SupplierChange($event,supp)" >{{supp.SupplierName}}</mat-option>
+              </ng-container>
+            </mat-select>
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field > 
+        <mat-select formControlName="orderId" placeholder="Order Id">
+            <mat-option>None</mat-option>
+
+            <mat-option *ngFor="let order of ordernolist" [value]="order.id" (onSelectionChange)="ordernochange($event,order)" >{{order.id}}</mat-option>
+
+            <!-- <ng-container *ngFor="let order of ordernolist">
+              
+              <mat-option value="{{order.id}}" (onSelectionChange)="ordernochange($event,order)" >{{order.id}}</mat-option>
+            </ng-container> -->
+          </mat-select>
+        </mat-form-field>
+
+        <!--  -->
+    </div>
+    <div>
+        <mat-form-field>
+          <mat-label>Invoice Number</mat-label>
+          <input matInput formControlName="invoiceNumber" type="number" placeholder="Invoice Number">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field style="width: 500px;">
+          <mat-label>GR Remarks</mat-label>
+          <textarea matInput formControlName="grRemarks"></textarea>
+        </mat-form-field>
+    </div>
+      </form>
+  
+      
+  
+      
+  
+    </div>
+  
+    <div mat-dialog-actions [align]="'end'" style="margin-top: 0px;">
+        <button mat-raised-button color="warn" (click)="onClose()" mat-dialog-close>close</button>
+        <button style="margin-left: 8px;" mat-raised-button color="primary"
+          (click)="addGoodsData()">{{actionBtn}}</button>
+      </div>
+  </div>
+
+
+  <div class="container">
+    <div style="margin-top:20px;">
+      <!-- <button  mat-raised-button [disabled]="additembutton"  (click)="openDetailDialog()">
+        <mat-icon>add</mat-icon>Add Items
+      </button> -->
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="DetaildataSource" matSort>
+
+          
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef width ="5%" mat-sort-header> ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="orderheadId">
+            <th mat-header-cell *matHeaderCellDef width ="10%" mat-sort-header> Order ID </th>
+            <td mat-cell *matCellDef="let row"> {{row.orderheadId}} </td>
+          </ng-container>
+
+     
+    
+        <ng-container matColumnDef="productname">
+          <th mat-header-cell  *matHeaderCellDef width ="20%" mat-sort-header > Product Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.productname}}</td>
+        </ng-container>
+    
+       
+        <ng-container matColumnDef="qty">
+            <th mat-header-cell  *matHeaderCellDef width ="10%" mat-sort-header > Qty </th>
+            <td mat-cell *matCellDef="let row"> {{row.qty}}</td>
+          </ng-container>
+          <ng-container matColumnDef="rate">
+            <th mat-header-cell  *matHeaderCellDef width ="15%" mat-sort-header > Rate </th>
+            <td mat-cell *matCellDef="let row"> {{row.rate | currency:'INR'}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell  *matHeaderCellDef width ="20%" mat-sort-header > Amount </th>
+            <td mat-cell *matCellDef="let row"> {{row.amount | currency:'INR'}}</td>
+          </ng-container>
+          <ng-container matColumnDef="taxper">
+            <th mat-header-cell  *matHeaderCellDef width ="10%" mat-sort-header > Tax % </th>
+            <td mat-cell *matCellDef="let row"> {{row.taxper}}</td>
+          </ng-container>
+          <ng-container matColumnDef="totalamount">
+            <th mat-header-cell  *matHeaderCellDef width ="20%" mat-sort-header >Total Amount </th>
+            <td mat-cell *matCellDef="let row"> {{row.totalamount | currency:'INR'}}</td>
+          </ng-container>
+    
+      
+        <ng-container matColumnDef="Action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+          <td mat-cell *matCellDef="let row"> 
+            <!-- <button mat-icon-button (click)="editOrderDetail(row)"  color="primary">
+              <mat-icon >edit</mat-icon>
+            </button> -->
+            <button mat-icon-button (click)="deleteGRDetail(row.id)" color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="DetaildisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: DetaildisplayedColumns;"></tr>
+    
+
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+      </div>
+      </div>
+
+  </div>

@@ -1,0 +1,12 @@
+<app-navbar ></app-navbar>
+
+<mat-drawer-container  class="home-container">
+  <mat-drawer  mode="side" opened><app-navtree  ></app-navtree></mat-drawer>
+  
+  <mat-drawer-content ><router-outlet></router-outlet></mat-drawer-content>
+
+  <div class="example-sidenav-content">
+    
+  </div>
+  
+</mat-drawer-container>

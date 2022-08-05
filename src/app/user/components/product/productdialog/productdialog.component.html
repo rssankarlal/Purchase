@@ -1,0 +1,131 @@
+<!-- <h1 mat-dialog-title>Add Product Form</h1> -->
+
+<mat-toolbar>
+    <span>{{productForm.controls['id'].value?"Modify Product":"New Product"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+  <div style="margin-top: 20px;"></div>
+  
+  <div mat-dialog-content class="example-container">
+      <form [formGroup]="productForm">
+        <div>
+          
+          <!-- <mat-form-field appearance="outline">
+  
+            <mat-label>Product Name</mat-label>
+              <input formControlName="productName" matInput placeholder="Name">
+             
+            </mat-form-field> -->
+            <mat-form-field>
+              <input formControlName="productName" matInput placeholder="Product Name">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+  
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Product Category </mat-label>
+             <mat-select formControlName="productCategory">
+              <mat-option value="Electronics">Electronics</mat-option>
+              <mat-option value="Grocery">Grocery</mat-option>
+              <mat-option value="Chocolates">Chocolates</mat-option>
+             </mat-select>
+            </mat-form-field> -->
+  
+            <mat-form-field>
+              <mat-select formControlName="categoryId" placeholder="Category">
+                <mat-option>None</mat-option>
+                <ng-container *ngFor="let cate of Category">
+                  <mat-option value="{{cate.id}}">{{cate.categorydesc}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+    
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+             <textarea matInput formControlName="productDescription"></textarea>
+            </mat-form-field> -->
+            
+           
+            <mat-form-field>
+              <textarea matInput formControlName="productDescription" placeholder="Product Description"></textarea>
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+          </div>  
+  
+  
+  
+          <!--  <mat-form-field appearance="outline">
+              <mat-label>Quantity</mat-label>
+              <input matInput formControlName="productQuantity" type="number" placeholder="ID">
+             
+            </mat-form-field>-->
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Price</mat-label>
+              <input matInput formControlName="productPrice" type="number" placeholder="ID">
+            </mat-form-field> -->
+            <div >
+            <mat-form-field>
+              <input formControlName="productPrice" type="number"  matInput placeholder="Price">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+  
+         
+  
+  
+         
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Tax Percentage</mat-label>
+              <input matInput formControlName="productTaxpercentage" type="number" placeholder="tax%">
+             
+            </mat-form-field> -->
+         <!--   <mat-form-field appearance="outline">
+              <mat-label>Taxcode</mat-label>
+              <input matInput formControlName="taxCode"  placeholder="taxcode">
+             
+            </mat-form-field>-->
+  
+  
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Taxcode </mat-label>
+             <mat-select formControlName="taxCode">
+              <ng-container   *ngFor="let tax of GstTax">
+                <mat-option [value]="tax.taxcode"   (onSelectionChange)="TaxChanged($event,tax)">{{tax.taxdesc}}</mat-option>
+              </ng-container>
+     
+             </mat-select>
+           
+            </mat-form-field> -->
+  
+            <mat-form-field>
+              <mat-select formControlName="taxcode" placeholder="Tax"  >
+                <mat-option>None</mat-option>
+                <ng-container   *ngFor="let tax of GstTax">
+                  <mat-option [value]="tax.taxcode" (onSelectionChange)="TaxChanged($event,tax)" >{{tax.taxdesc}}</mat-option>
+                  <!-- <mat-option value={{tax.taxcode}}>{{tax.taxdesc}}</mat-option> -->
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+  
+            <mat-form-field>
+              <input formControlName="productTaxpercentage"   matInput placeholder="Tax %">
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+  
+         
+  
+  
+            <!-- <mat-form-field appearance="outline">
+              <mat-label>Comments</mat-label>
+            
+             <textarea matInput formControlName="productComment"></textarea>
+            </mat-form-field> -->
+  
+          </div>
+      </form>
+       
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>close</button>
+    <button  style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">{{actionBtn}}</button>
+  </div>
+  

@@ -1,0 +1,426 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Product 1",
+      "categoryId": "1",
+      "productCategory": "",
+      "productPrice": 600,
+      "productComment": "",
+      "productDescription": "testting",
+      "productQuantity": 0,
+      "productAmount": 0,
+      "productTaxpercentage": 9,
+      "taxcode": "GST9",
+      "productImage": ""
+    },
+    {
+      "id": 2,
+      "productName": "Product 2",
+      "categoryId": "2",
+      "productCategory": "",
+      "productPrice": 500,
+      "productComment": "",
+      "productDescription": "asdfd",
+      "productQuantity": 0,
+      "productAmount": 0,
+      "productTaxpercentage": 9,
+      "taxcode": "GST9",
+      "productImage": ""
+    }
+  ],
+  "suppliers": [
+    {
+      "SupplierName": "moni",
+      "SupplierAddress": "chennai",
+      "ContactName": "monica",
+      "ContactNumber": "123456789",
+      "ContactEmail": "moni@mail.com",
+      "GSTNumber": "1234567890",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "SupplierName": "dd",
+      "SupplierAddress": "ddd",
+      "ContactName": "venkatesan",
+      "ContactNumber": "dd",
+      "ContactEmail": "ddd",
+      "GSTNumber": "ddfdf"
+    },
+    {
+      "id": 3,
+      "SupplierName": "Testing 2",
+      "SupplierAddress": "safsdf",
+      "ContactName": "Venkat",
+      "ContactNumber": "99999",
+      "ContactEmail": "999999",
+      "GSTNumber": "9999999"
+    },
+    {
+      "id": 4,
+      "SupplierName": "A 1",
+      "SupplierAddress": "testing",
+      "ContactName": "5554",
+      "ContactNumber": "554",
+      "ContactEmail": "5454",
+      "GSTNumber": "5454"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "categorydesc": "Category1"
+    },
+    {
+      "id": 2,
+      "categorydesc": "Category2"
+    },
+    {
+      "id": 3,
+      "categorydesc": "Category3"
+    },
+    {
+      "id": 4,
+      "categorydesc": "Category4"
+    },
+    {
+      "id": 5,
+      "categorydesc": "Category 6"
+    }
+  ],
+  "taxdetail": [
+    {
+      "id": 1,
+      "taxcode": "GST0",
+      "taxdesc": "Zero Tax",
+      "taxper": 0,
+      "cgst": 0,
+      "sgst": 0
+    },
+    {
+      "id": 2,
+      "taxcode": "GST5",
+      "taxdesc": "GST 5 %",
+      "taxper": 5,
+      "cgst": 2.5,
+      "sgst": 2.5
+    },
+    {
+      "id": 3,
+      "taxcode": "GST9",
+      "taxdesc": "GST 9 %",
+      "taxper": 9,
+      "cgst": 4.5,
+      "sgst": 4.5
+    },
+    {
+      "id": 4,
+      "taxcode": "GST12",
+      "taxdesc": "GST 12 %",
+      "taxper": 12,
+      "cgst": 6,
+      "sgst": 6
+    },
+    {
+      "id": 5,
+      "taxcode": "GST18",
+      "taxdesc": "GST 18  %",
+      "taxper": 18,
+      "cgst": 9,
+      "sgst": 9
+    },
+    {
+      "id": 6,
+      "taxcode": "GST28",
+      "taxdesc": "GST 28 %",
+      "taxper": 28,
+      "cgst": 14,
+      "sgst": 14
+    }
+  ],
+  "orderhead": [
+    {
+      "id": 1,
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "orderDate": "2022-08-26",
+      "dueDate": "2022-09-01"
+    },
+    {
+      "id": 2,
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "orderDate": "2022-08-11",
+      "dueDate": "2022-08-24"
+    },
+    {
+      "id": 3,
+      "supplierId": "1",
+      "supplierName": "moni",
+      "orderDate": "2022-08-10",
+      "dueDate": "2022-08-27"
+    },
+    {
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "orderDate": "2022-08-04",
+      "dueDate": "2022-08-30",
+      "id": 4
+    },
+    {
+      "supplierId": "4",
+      "supplierName": "A 1",
+      "orderDate": "2022-09-02",
+      "dueDate": "2022-08-18",
+      "id": 5
+    },
+    {
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "orderDate": "2022-08-25",
+      "dueDate": "2022-08-24",
+      "id": 6
+    }
+  ],
+  "orderdetail": [
+    {
+      "id": 1,
+      "orderheadId": 1,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 100,
+      "rate": 50,
+      "amount": 5000,
+      "taxcode": "GST9",
+      "taxper": 9,
+      "totalamount": 5450
+    },
+    {
+      "id": 2,
+      "orderheadId": 1,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 10,
+      "rate": 200,
+      "amount": 2000,
+      "taxcode": "GST28",
+      "taxper": 28,
+      "totalamount": 2560
+    },
+    {
+      "id": 3,
+      "orderheadId": 2,
+      "productsId": "1",
+      "productname": "Product 1",
+      "qty": 100,
+      "rate": 50,
+      "amount": 5000,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 5000
+    },
+    {
+      "id": 4,
+      "orderheadId": 3,
+      "productsId": "1",
+      "productname": "Product 1",
+      "qty": 100,
+      "rate": 10,
+      "amount": 1000,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 1000
+    },
+    {
+      "id": 5,
+      "orderheadId": 3,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 20,
+      "rate": 10,
+      "amount": 200,
+      "taxcode": "GST18",
+      "taxper": 18,
+      "totalamount": 236
+    },
+    {
+      "id": 7,
+      "orderheadId": 4,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 60,
+      "rate": 60,
+      "amount": 3600,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 3600
+    },
+    {
+      "id": 8,
+      "orderheadId": 5,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 10,
+      "rate": 26,
+      "amount": 260,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 260
+    },
+    {
+      "id": 9,
+      "orderheadId": 6,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 60,
+      "rate": 60,
+      "amount": 3600,
+      "taxcode": "GST5",
+      "taxper": 5,
+      "totalamount": 3780
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullname": "monica",
+      "email": "moni@mail.com",
+      "password": "123456",
+      "mobile": 123456789,
+      "id": 1
+    },
+    {
+      "fullname": "venkatesan",
+      "email": "venkat@hexacorp.com",
+      "password": "123",
+      "mobile": 7200723440,
+      "id": 2
+    },
+    {
+      "fullname": "Venkat",
+      "email": "mvenky@gmail.com",
+      "password": "123",
+      "mobile": "7200723440",
+      "id": 3
+    },
+    {
+      "fullname": "Venky",
+      "email": "vvv@gmail.com",
+      "password": "123",
+      "mobile": "7200723440",
+      "id": 4
+    },
+    {
+      "fullname": "Venkat",
+      "email": "AAA@gmail.com",
+      "password": "123",
+      "mobile": "66666666",
+      "id": 5
+    }
+  ],
+  "goodsreceipt": [
+    {
+      "supplierId": "1",
+      "supplierName": "moni",
+      "grDate": "2022-08-20",
+      "orderId": 3,
+      "invoiceNumber": 46464,
+      "grRemarks": "adfasdfsadfasdfasdf",
+      "id": 1
+    },
+    {
+      "supplierId": "1",
+      "supplierName": "moni",
+      "grDate": "2022-08-12",
+      "orderId": 3,
+      "invoiceNumber": 4646,
+      "grRemarks": "dagsdfsdafsadfsdf",
+      "id": 2
+    },
+    {
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "grDate": "2022-09-01",
+      "orderId": 1,
+      "invoiceNumber": 4545,
+      "grRemarks": "asdfsdfsdf",
+      "id": 3
+    },
+    {
+      "supplierId": "3",
+      "supplierName": "Testing 2",
+      "grDate": "2022-09-01",
+      "orderId": 6,
+      "invoiceNumber": 454,
+      "grRemarks": "asdfasdf",
+      "id": 4
+    }
+  ],
+  "grdetail": [
+    {
+      "id": 1,
+      "orderheadId": 3,
+      "grId": 1,
+      "productsId": "1",
+      "productname": "Product 1",
+      "qty": 100,
+      "rate": 10,
+      "amount": 1000,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 1000
+    },
+    {
+      "id": 2,
+      "orderheadId": 3,
+      "grId": 2,
+      "productsId": "1",
+      "productname": "Product 1",
+      "qty": 100,
+      "rate": 10,
+      "amount": 1000,
+      "taxcode": "GST0",
+      "taxper": 0,
+      "totalamount": 1000
+    },
+    {
+      "id": 3,
+      "orderheadId": 3,
+      "grId": 2,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 20,
+      "rate": 10,
+      "amount": 200,
+      "taxcode": "GST18",
+      "taxper": 18,
+      "totalamount": 236
+    },
+    {
+      "id": 4,
+      "orderheadId": 1,
+      "grId": 3,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 100,
+      "rate": 50,
+      "amount": 5000,
+      "taxcode": "GST9",
+      "taxper": 9,
+      "totalamount": 5450
+    },
+    {
+      "id": 6,
+      "orderheadId": 6,
+      "grId": 4,
+      "productsId": "2",
+      "productname": "Product 2",
+      "qty": 60,
+      "rate": 60,
+      "amount": 3600,
+      "taxcode": "GST5",
+      "taxper": 5,
+      "totalamount": 3780
+    }
+  ]
+}
